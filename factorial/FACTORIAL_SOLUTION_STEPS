@@ -1,0 +1,14 @@
+1. import the name space for c# arbitray-precision arithmetic datatypes
+   to be able to use the BigInteger datatype to ensure the factorial program
+   is capable of handling the factorial result of large numbers.
+   
+   using System.Numerics;
+
+2. accept input from user.
+
+3. pass user input to the factorial method to calculate the factorial
+   of valid number entered by user.
+
+   factorial method return type is BigInteger because....
+
+4. display result in scientific notation with the e+157 format
