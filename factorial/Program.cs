@@ -8,6 +8,8 @@
 // importing arbitrary-precision arithmetic datatypes namespace.
 using System.Numerics;
 
+const long LONGUPPERBOUND = 9223372036854775807;
+
 /***
     Function to get input number from user. Prompt user for an input
     until a valid input is provided.
@@ -23,7 +25,7 @@ int get_input()
         {
             Console.Write("Enter number: ");
 
-            // accept number from user            
+            // accept number from user  and explicitly cast to integer.          
             number = Convert.ToInt32(Console.ReadLine());
 
             // check for negatives and ignore
@@ -48,11 +50,11 @@ int get_input()
 
 /***
     Function to find the factorial of a number
-    @input::int 
+    @input::int -> number
         number to retrieve factorial for.
 
     @output::BigInteger   
-        factorial of input number uisng BigInteger
+        factorial of input number using BigInteger
         Arbitrary-precision arithmetic datattype,
         to handle factorial results of large numbers.
 ***/
@@ -69,19 +71,31 @@ BigInteger factorial(int number)
 }
 
 /***
-    function to perform the factorial of number
-    if entered number is valid.
+    main function used to start the progam process of
+    finding the factorial.
     @input:: none
     @output:: none (void function)
 ***/
 void calculate_factorial()
 {
+    BigInteger result;
     int user_input = get_input();
 
     if(user_input >= 0)
     {
-        // print factorial result in scientific notation with e+15 format
-        Console.WriteLine($"Factorial of {user_input} is: " + factorial(user_input).ToString("e15"));
+        result = factorial(user_input);
+
+        if(result > LONGUPPERBOUND)
+        {
+            // print factorial result in scientific notation with e+15 format
+            Console.WriteLine($"Factorial of {user_input} is: " + result.ToString("e15"));
+        }
+        else
+        {
+            // print factorial result in raw format since result is less than the max a
+            // long datatype can hold.
+            Console.WriteLine($"Factorial of {user_input} is: " + result.ToString());
+        }
     }
 }
 
