@@ -1,0 +1,10 @@
+1. get input number from user and keep reprompting
+   for a valid positive integer using a do..while() loop.
+   Return number once a valid number has been entered.
+
+2. Call the collatz function on the valid positive integer
+   using recursion to count how many steps to get back to 1 from the
+   number.
+   1 is added to each recursive call.
+
+3. Print the amount of steps to bet back to 1 from number.
