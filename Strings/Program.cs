@@ -80,3 +80,8 @@ Console.WriteLine(welcome.Remove(7,4)); // WelcomeJamrock!
 // insert value into welcome string - starting at index after last index.
 Console.WriteLine(welcome.Insert(welcome.Length, " The best country eva!"));
 
+
+//** 11 => Escaping character (\)
+string txt = "The \"Wloves\" are the best in the business.";
+string txxt = "It\'s raining";
+Console.WriteLine(txxt);
