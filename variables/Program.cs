@@ -32,8 +32,13 @@ Person? person = null;
 */
 var personValue = person ?? new Person()
 {
-    first_name = "Jim",
-    last_name = "bo"
+    First_name = "Jim",
+    Last_name = "bo"
 };
 
-Console.WriteLine(personValue.first_name);
+// print the value of the created person's firstname, once perosn object is null.
+Console.WriteLine(personValue.First_name);
+
+
+/*************************** Defining c# variables ****************************/
+
