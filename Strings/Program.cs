@@ -41,10 +41,42 @@ string country = "Jamaica";
 Console.WriteLine(country[2]);  // m
 
 
+//** 7 => IndexOf()/LastIndexOf() methods
+int a_index = country.IndexOf('a');  // 1
+Console.WriteLine(a_index);
+
+// specify what index to start searching from
+a_index = country.IndexOf('a', 2);  // 3
+Console.WriteLine(a_index);
+
+int a_lindex = country.LastIndexOf('a');  // 6
+Console.WriteLine(a_lindex);
 
 
+//** 8 => substring
+string who = "John Doe";
+int lnamepos = who.IndexOf('D');
+string lname = who.Substring(lnamepos);
+Console.WriteLine(lname);
+
+string script = "here is an example sample text for substring testing";
+Console.WriteLine(script.Substring(19));    // sample text for substring testing
+Console.WriteLine(script.Substring(19, 6)); // sample
 
 
+//** 9 => Contains, StartsWith, EndsWith
+Console.WriteLine(script.Contains("example"));  // True
+Console.WriteLine(script.Contains("board"));    // False
+
+Console.WriteLine(who.StartsWith("John"));      // True
+Console.WriteLine(who.EndsWith("John"));        // False
 
 
+//** 10 => Remove, Insert
+string welcome = "Welcome to Jamrock!";
+Console.WriteLine(welcome.Remove(8));   // Welcome
+Console.WriteLine(welcome.Remove(7,4)); // WelcomeJamrock!
+
+// insert value into welcome string - starting at index after last index.
+Console.WriteLine(welcome.Insert(welcome.Length, " The best country eva!"));
 

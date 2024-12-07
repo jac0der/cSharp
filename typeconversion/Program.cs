@@ -3,7 +3,7 @@
     Exploring typcasting in c#.
 
     @author:   jac0der
-    @datetime: December 07, 2024 UTC-5
+    @datetime: December 07, 2024 9:00 am (UTC-5)
 */
 
 // implicit type casting (automatic): converting a smaller type to a larger type size.
