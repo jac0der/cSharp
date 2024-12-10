@@ -16,24 +16,24 @@ Console.WriteLine("Enter the id of user to retrieve");
 // since retrieving a user could cause an error, add a try catch around this code.
 try
 {
-    user_id = Convert.ToInt32(Console.ReadLine());  
+    user_id = Convert.ToInt32(Console.ReadLine());
     var user = userService.GetById(user_id);
 
     Console.WriteLine($"The user you selected is: {user.Name}");
 }
-catch(FormatException fe)
+catch(FormatException fe) // specific exception catch
 {
     Console.WriteLine(fe.Message);
 }
-catch(InvalidUserIdException iue) when (user_id <= 0)
+catch(InvalidUserIdException iue) when (user_id <= 0) // conditional exception catch
 {
     Console.WriteLine("User id must be a positive number. " + iue.Message);
 }
-catch(InvalidUserIdException iue) when (user_id >= 1000)
+catch(InvalidUserIdException iue) when (user_id >= 1000) // conditional exception catch
 {
     Console.WriteLine("User ID should be smaller than 1000. " + iue.Message);
 }
-catch(Exception ex)
+catch(Exception ex) // generall catch all exception catch
 {
     Console.WriteLine("An Unexpected Error has occurred.");
     Console.WriteLine(ex.Message);
