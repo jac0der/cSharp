@@ -17,8 +17,18 @@ namespace exceptionshandling.services
         // get a user by provided user id
         public User GetById(int id)
         {
+            ValidateID(id);
+
             var user = _users.First(x => x.Id == id);
             return user;
+        }
+
+        public void Clear() => _users.Clear();
+
+        private static void ValidateID(int id)
+        {
+            if(id <= 0 || id > 1000)
+                throw new InvalidUserIdException();
         }
     }
 }
